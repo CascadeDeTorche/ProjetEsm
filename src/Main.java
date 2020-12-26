@@ -30,43 +30,43 @@ public class Main {
            {
                 System.out.println("La branche n'est pas accessible");
            }
-       double Xo2 = x-d4*Math.cos(phi); // on définit les variables de la position de O2
-       double Yo2 = y+d4*Math.sin(phi);
-
-       //Calcul de theta2
-       double c2 = (Math.pow(Xo2,2)+Math.pow(Yo2,2)-Math.pow(a1,2)-Math.pow(a2,2))/(2*a1*a2);
-       double s2= Math.sqrt(1-Math.pow(c2,2));
-       double theta2 = Math.atan2(s2,c2);
-       theta2=theta2*180/3.14159;
-
-       phi=phi*180/3.14159; //on remet phi en degre
-
-            if(Double.isNaN(theta2)) // on avertie l'utilisateur que le phi entré ne permet pas la position et qu'il est changé
-            {
-                System.out.println("Votre phi a été changé");
-                phichangé=true;
-            }
-
-           while(Double.isNaN(theta2)||phi>360) // on détermine le nouveau phi
-           {
-
-                   phi=phi+1;
-                   phi=phi*3.14159/180;
-                   Xo2 = x-d4*Math.cos(phi); // on définit les variables de la position de O2
-                   Yo2 = y+d4*Math.sin(phi);
-                   c2 = (Math.pow(Xo2,2)+Math.pow(Yo2,2)-Math.pow(a1,2)-Math.pow(a2,2))/(2*a1*a2);
-                   s2= Math.sqrt(1-Math.pow(c2,2));
-                   theta2 = Math.atan2(s2,c2);
-                   theta2=theta2*180/3.14159;
-                   phi=phi*180/3.14159;
-
-           }
-
-           if(phi>360) // si après avoir faitt un tour aucune valeur de phi ne va alors on renvoie cette position comme non accessible
-           {
-                   System.out.println("La position ne semble pas accessible");
-           }
            else {
+               double Xo2 = x - d4 * Math.cos(phi); // on définit les variables de la position de O2
+               double Yo2 = y + d4 * Math.sin(phi);
+
+               //Calcul de theta2
+               double c2 = (Math.pow(Xo2, 2) + Math.pow(Yo2, 2) - Math.pow(a1, 2) - Math.pow(a2, 2)) / (2 * a1 * a2);
+               double s2 = Math.sqrt(1 - Math.pow(c2, 2));
+               double theta2 = Math.atan2(s2, c2);
+               theta2 = theta2 * 180 / 3.14159;
+
+               phi = phi * 180 / 3.14159; //on remet phi en degre
+
+               if (Double.isNaN(theta2)) // on avertie l'utilisateur que le phi entré ne permet pas la position et qu'il est changé
+               {
+                   System.out.println("Votre phi a été changé");
+                   phichangé = true;
+               }
+
+               while (Double.isNaN(theta2) || phi > 360) // on détermine le nouveau phi
+               {
+
+                   phi = phi + 1;
+                   phi = phi * 3.14159 / 180;
+                   Xo2 = x - d4 * Math.cos(phi); // on définit les variables de la position de O2
+                   Yo2 = y + d4 * Math.sin(phi);
+                   c2 = (Math.pow(Xo2, 2) + Math.pow(Yo2, 2) - Math.pow(a1, 2) - Math.pow(a2, 2)) / (2 * a1 * a2);
+                   s2 = Math.sqrt(1 - Math.pow(c2, 2));
+                   theta2 = Math.atan2(s2, c2);
+                   theta2 = theta2 * 180 / 3.14159;
+                   phi = phi * 180 / 3.14159;
+
+               }
+
+               if (phi > 360) // si après avoir faitt un tour aucune valeur de phi ne va alors on renvoie cette position comme non accessible
+               {
+                   System.out.println("La position ne semble pas accessible");
+               } else {
                    //Calcul de Theta1
                    double c1 = (Xo2 * (a1 + a2 * c2) + Yo2 * a2 * c2) / (Math.pow(Xo2, 2) + Math.pow(Yo2, 2));
                    double s1 = (Yo2 * (a1 + a2 * c2) - Xo2 * a2 * c2) / (Math.pow(Xo2, 2) + Math.pow(Yo2, 2));
@@ -81,11 +81,12 @@ public class Main {
                    System.out.println("Theta2 vaut : " + theta2);
                    System.out.println("Theta3 vaut : " + theta3);
 
-                   if(phichangé) //si la valeur de phi est changée alors on affiche sa nouvelle valeur
+                   if (phichangé) //si la valeur de phi est changée alors on affiche sa nouvelle valeur
                    {
                        System.out.println("Le nouveau phi vaut : " + phi);
                    }
 
+               }
            }
         System.out.println("__________________________________________________");
     }
