@@ -4,9 +4,9 @@ public class Main {
 
     public static void main (String[] args){
         // on définit les variables de longueur de notre programme
-        int a1=50;
-        int a2=50;
-        int d4=50;
+        int a1=500;
+        int a2=250;
+        double d4=125;
 
         boolean phichangé=false;// booléen nous permettant de vérifier si la valeur de phi a été modifié
 
@@ -80,7 +80,10 @@ public class Main {
                    System.out.println("Theta1 vaut : " + theta1);
                    System.out.println("Theta2 vaut : " + theta2);
                    System.out.println("Theta3 vaut : " + theta3);
-
+                   double xobtenu=d4*Math.sin(phi*3.14159/180)+a2*Math.cos((theta1+theta2)*3.1459/180)+a1*Math.cos(theta1*3.14159/180);
+                   double yobtenu=-d4*Math.cos(phi*3.14159/180)+a2*Math.sin((theta1+theta2)*3.1459/180)+a1*Math.sin(theta1*3.14159/180);
+                   System.out.println("x : "+xobtenu);
+                   System.out.println("y : "+yobtenu);
                    if (phichangé) //si la valeur de phi est changée alors on affiche sa nouvelle valeur
                    {
                        System.out.println("Le nouveau phi vaut : " + phi);
