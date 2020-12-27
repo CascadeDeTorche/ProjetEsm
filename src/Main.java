@@ -31,8 +31,8 @@ public class Main {
                 System.out.println("La branche n'est pas accessible");
            }
            else {
-               double Xo2 = x - d4 * Math.cos(phi); // on définit les variables de la position de O2
-               double Yo2 = y + d4 * Math.sin(phi);
+               double Xo2 = x - d4 * Math.sin(phi); // on définit les variables de la position de O2
+               double Yo2 = y + d4 * Math.cos(phi);
 
                //Calcul de theta2
                double c2 = (Math.pow(Xo2, 2) + Math.pow(Yo2, 2) - Math.pow(a1, 2) - Math.pow(a2, 2)) / (2 * a1 * a2);
@@ -53,8 +53,8 @@ public class Main {
 
                    phi = phi + 1;
                    phi = phi * 3.14159 / 180;
-                   Xo2 = x - d4 * Math.cos(phi); // on définit les variables de la position de O2
-                   Yo2 = y + d4 * Math.sin(phi);
+                   Xo2 = x - d4 * Math.sin(phi); // on définit les variables de la position de O2
+                   Yo2 = y + d4 * Math.cos(phi);
                    c2 = (Math.pow(Xo2, 2) + Math.pow(Yo2, 2) - Math.pow(a1, 2) - Math.pow(a2, 2)) / (2 * a1 * a2);
                    s2 = Math.sqrt(1 - Math.pow(c2, 2));
                    theta2 = Math.atan2(s2, c2);
@@ -69,7 +69,7 @@ public class Main {
                } else {
                    //Calcul de Theta1
                    double c1 = (Xo2 * (a1 + a2 * c2) + Yo2 * a2 * c2) / (Math.pow(Xo2, 2) + Math.pow(Yo2, 2));
-                   double s1 = (Yo2 * (a1 + a2 * c2) - Xo2 * a2 * c2) / (Math.pow(Xo2, 2) + Math.pow(Yo2, 2));
+                   double s1 = (Yo2 * (a1 + a2 * c2) - Xo2 * a2 * s2) / (Math.pow(Xo2, 2) + Math.pow(Yo2, 2));
                    double theta1 = Math.atan2(s1, c1);
                    theta1 = theta1 * 180 / 3.14159;
 
