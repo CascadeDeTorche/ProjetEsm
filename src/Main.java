@@ -4,9 +4,9 @@ public class Main {
 
     public static void main (String[] args){
         // on définit les variables de longueur de notre programme
-        int a1=500;
-        int a2=250;
-        double d4=125;
+        int a1=50;
+        int a2=50;
+        double d4=50;
 
         boolean phichangé=false;// booléen nous permettant de vérifier si la valeur de phi a été modifié
 
@@ -40,7 +40,7 @@ public class Main {
                double theta2 = Math.atan2(s2, c2);
                theta2 = theta2 * 180 / Math.PI;
 
-               phi = phi * 180 / 3.14159; //on remet phi en degre
+               phi = phi * 180 / 3.14159; //on remet phi en degree
 
                if (Double.isNaN(theta2)) // on avertie l'utilisateur que le phi entré ne permet pas la position et qu'il est changé
                {
@@ -68,7 +68,7 @@ public class Main {
                    System.out.println("La position ne semble pas accessible");
                } else {
                    //Calcul de Theta1
-                   double c1 = (Xo2 * (a1 + a2 * c2) + Yo2 * a2 * c2) / (Math.pow(Xo2, 2) + Math.pow(Yo2, 2));
+                   double c1 = (Xo2 * (a1 + a2 * c2) + Yo2 * a2 * s2) / (Math.pow(Xo2, 2) + Math.pow(Yo2, 2));
                    double s1 = (Yo2 * (a1 + a2 * c2) - Xo2 * a2 * s2) / (Math.pow(Xo2, 2) + Math.pow(Yo2, 2));
                    double theta1 = Math.atan2(s1, c1);
                    theta1 = theta1 * 180 / Math.PI;
